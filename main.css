@@ -1,0 +1,374 @@
+@charset 'utf-8';
+
+html {
+	font-family: 'Noto Sans KR', sans-serif;
+	/* font-size: 14px; */
+}
+
+body {
+    overflow-x: hidden;
+    /* color: rgb(29,29,31); */
+    letter-spacing: -0.05em;
+    /* background : white; */
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color : rgb(29,29,31);
+    text-decoration: none;
+}
+
+body.before-load {
+    overflow: hidden;
+}
+
+.section-btn-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position:fixed;
+    right: 0;
+    top: 25%;
+    width: 100px;
+    height: auto;
+    z-index: 200;
+}
+
+.menu-btn img{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 300;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+}
+
+.menu-section {
+    margin-top: 64px;
+    width: 0px;
+    height: 94%;
+    background-color: rgb(65,65,65);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 350;
+    transition: .3s;
+    overflow-x: hidden;
+}
+
+.menu-section .scroll-box {
+    width: 280px;
+    height: 100%;
+    overflow-y: scroll;
+}
+  .scroll-box::-webkit-scrollbar {
+    width: 1.5em;
+  }
+  .scroll-box::-webkit-scrollbar,
+  .scroll-box::-webkit-scrollbar-thumb {
+    overflow:visible;
+  }
+  .scroll-box::-webkit-scrollbar-thumb {
+    background: #aaa;
+    background-clip: padding-box;
+    border: 9px solid transparent;
+    border-radius: 20px;
+  }
+  .cover-bar {
+    position: absolute;
+    background:rgb(65,65,65);
+    height: 100%;  
+    top: 0;
+    right: 0;
+    width: 1em;
+    -webkit-transition: all .5s;
+    opacity: 1;
+    border-radius: 4px;
+  }
+  /* MAGIC HAPPENS HERE */
+  .menu-section:hover .cover-bar {
+    opacity: 0;
+    -webkit-transition: all .5s;
+  }
+
+
+
+.close-btn-section {
+    width: 0px;
+    height: 64px;
+    position: fixed;
+    right: 0;
+    background-color: rgb(65,65,65);
+    /* background-color: blue; */
+    transition: .3s;
+    z-index: 350;
+}
+
+.close-btn-section img {
+    width: 64px;
+    height: 64px;
+    position :absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+
+.menu-section .item-list {
+    margin : 0px 0px 0px 20px;
+}
+
+.menu-section .item-list .section-title {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.menu-section .item-list .section-img {
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+
+.container {
+     /*  아이폰 가로 히든 */
+    overflow: hidden;
+}
+
+.scroll-section {
+    position: relative;
+    padding-top : 50vh;
+}
+
+#scroll-section-0 h1 {
+    position: relative;
+    z-index: 5;
+    font-size: 4rem;
+    text-align: center;
+    top: -10vh;
+}
+
+.main-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+    font-size: 2.5rem;
+    /* margin: 5px 0px; */
+    opacity: 0;
+    top : 3px;
+}
+
+.main-message p {
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    position: absolute;
+    left: 130px;
+    /* right: 20px; */
+    color: rgb(0, 80, 185);
+}
+
+.main-message small {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.description strong {
+    float: left;
+    margin-right: 0.2em;
+    font-size: 3rem;
+    color: rgb(29,29,31);
+}
+
+.desc-message {
+    opacity: 0;
+    width: 50%;
+    font-weight: bold;
+}
+
+.pin {
+    width: 1px;
+    height: 100px;
+    background: rgb(29,29,31);
+}
+
+.mid-message {
+    max-width: 1000px;
+    margin : 0 auto;
+    padding: 0 1rem;
+    font-size: 2rem;
+    color: #888;
+}
+
+.mid-message strong {
+    color: rgb(29,29,31);
+}
+
+.canvas-caption {
+    max-width: 1000px;
+    margin: -24rem auto 0;
+    color: #888;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7rem;
+    color: white;
+    background: darkorange;
+}
+
+.sticky-elem {
+    display: none;
+    position: fixed;
+    left: 0;
+    width: 100%;
+}
+
+#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-1 #scroll-section-1 .sticky-elem,
+#show-scene-2 #scroll-section-2 .sticky-elem,
+#show-scene-3 #scroll-section-3 .sticky-elem,
+#show-scene-4 #scroll-section-4 .sticky-elem,
+#show-scene-5 #scroll-section-5 .sticky-elem,
+#show-scene-6 #scroll-section-6 .sticky-elem,
+#show-scene-7 #scroll-section-7 .sticky-elem,
+#show-scene-8 #scroll-section-8 .sticky-elem,
+#show-scene-9 #scroll-section-9 .sticky-elem,
+#show-scene-10 #scroll-section-10 .sticky-elem,
+#show-scene-11 #scroll-section-11 .sticky-elem,
+#show-scene-12 #scroll-section-12 .sticky-elem,
+#show-scene-13 #scroll-section-13 .sticky-elem,
+#show-scene-14 #scroll-section-14 .sticky-elem,
+#show-scene-15 #scroll-section-15 .sticky-elem,
+#show-scene-16 #scroll-section-16 .sticky-elem,
+#show-scene-17 #scroll-section-17 .sticky-elem {
+    display: block;
+    will-change: transform, opacity;
+}
+
+.stick-elem-canvas {
+    top : 0;
+    height: 100%;
+    /* background-color: #ccc; */
+}
+
+.stick-elem-canvas canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+/* #scroll-section-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.image-blend-canvas.sticky {
+    position:fixed;
+    top : 0;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top : 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: white;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.before-load .loading {
+    opacity: 1;
+}
+
+@keyframes loading-spin {
+    100% { transform: rotate(360deg);}
+}
+
+.loading-circle {
+    width: 54px;
+    height: 54px;
+
+    animation: loading-spin 3s infinite;
+}
+
+@keyframes loading-circle-ani {
+    0% {    stroke-dashoffset: 157;    }
+    75% {    stroke-dashoffset: -147;    }
+    100% {    stroke-dashoffset: -157;    }
+}
+
+.loading-circle circle {
+    stroke: black;
+    stroke-width: 4;
+    /* getTotalLength()로 stroke의 길이를 얻어올수 있음 */
+    stroke-dasharray: 157;
+    stroke-dashoffset: 0;
+    fill : transparent;
+    animation: loading-circle-ani 1s infinite;
+}
+
+@media (min-width: 1024px) {
+    #scroll-section-0 h1 {
+        font-size: 9vw;
+    }
+
+    .main-message.a {
+        font-size: 7.5vw;
+    }
+
+    .description {
+        padding: 0;
+        font-size: 2rem;
+    }
+
+    .description strong{
+        font-size: 6rem;
+    }
+
+    .main-message small {
+        font-size: 1.5vw;
+    }
+
+    .desc-message {
+        width : 20%;
+    }
+
+    .mid-message {
+        padding: 0;
+        width: 1000px;
+        font-size: 4vw;
+    }
+
+    .canvas-caption {
+        margin-top: -8rem;
+        padding: 0;
+        font-size: 2rem;
+    }
+
+}

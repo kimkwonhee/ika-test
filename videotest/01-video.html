@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			height: 500vh;		/* 기본적인 스크롤 높이 5배 지정 */
+		}
+		body.before-load {
+			overflow-y: hidden;
+		}
+		.sample-video {		/* 기본 fixed로 고정 */
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+	</style>
+</head>
+<body class="before-load">
+	<video class="sample-video" src="../video/sample-low.mp4" muted></video>	<!-- 비디오 태그 설정-->
+	<!-- <video class="sample-video" src="../video/sample-high.mp4" muted></video> -->
+
+	<script>
+		const videoElem = document.querySelector('.sample-video');		//video element 받아오기
+		let progress;
+		let currentFrame;
+		function init() {												
+			document.body.classList.remove('before-load');
+
+			window.addEventListener('scroll', function () {
+				progress = pageYOffset / (document.body.offsetHeight - window.innerHeight);		//스크롤 비율 
+				// console.log(progress);
+				if (progress < 0) progress = 0;		// 0 미만은 0으로 처리 -모바일 처리 때문에
+				if (progress > 1) progress = 1;		// 1초과는 1로 처리 모바일 처리 문제 때문에
+
+				videoElem.currentTime = videoElem.duration * progress;
+			});
+		}
+
+		window.addEventListener('load', init);
+	</script>
+</body>
+</html>
